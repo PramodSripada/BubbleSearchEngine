@@ -7,7 +7,7 @@ error_reporting(1); //hides all warning and notices
 
 //using PDO because they prevent SQL Injection
 try {
-		$pdo= new PDO('mysql:host=127.0.0.1;dbname=Search','root','');
+		$pdo= new PDO('mysql:host=127.0.0.1;dbname=Search','root','root');
 		$pdo->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 		echo "Connected Successfully\n";
 		}

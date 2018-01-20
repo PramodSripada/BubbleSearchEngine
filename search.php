@@ -1,6 +1,7 @@
 <?php
 
-$pdo = new PDO('mysql:host=127.0.0.1;dbname=Search','root','');
+ini_set('display_errors', '1');
+$pdo = new PDO('mysql:host=127.0.0.1;dbname=Search','root','root');
 
 $search = $_GET['q'];
 $searche = explode(" ", $search);
