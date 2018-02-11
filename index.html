@@ -1,16 +1,39 @@
 <!DOCTYPE html>
-	<html>
-		<head>
-			<meta charset="utf-8">
-			<title>Bubble Search Engine</title>
-		</head>
-		<body>
-			<div style="width: 600px; margin: 10px auto">
-				<h1 style="text-align: center">Search the Web with Bubble Search Engine</h1>
-				<form action="search.php" method="get">
-					<input type="text" style="width: 100%; font-size: 16px;" name="q" value="" placeholder="What are you looking for?">
-					<div style="text-align: center"><input type="submit" style="font-size: 16px; margin-top: 10px" name="search" value="Search"></div>
-				</form>
-			</div>
-		</body>
-		</html>
+<html lang="en-US" >
+<head>
+    <meta charset="UTF-8">
+    <title>Bubble Search Engine</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-alpha.3/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Slab" rel="stylesheet">
+</head>
+<body>
+    <main class="container">
+        <div class="gif-img">
+            <img src="img/bubble.gif">
+        </div>
+        <div class="row" style="margin-top: 20%">
+            <div class="card col s12 hoverable">
+                <form action="search.php" method="get">
+                <div class="card-content">
+                    <span class="card-title">Bubble Search Engine</span>
+                    <div class="col s12 input-field">
+                        <input id="search_field" type="text" name="q" value="" name="search_text" required>
+                        <label for="search_field">What are you looking for?</label>
+                    </div>
+                </div>
+                <div class="center">
+                    <button class="btn waves-effect waves-light hoverable red" type="submit" name="submit">Bubble the Web
+                        <i class="material-icons left">search</i>
+                    </button>
+                    <div class="section"/>
+                </div>
+                </form>
+            </div>
+        </div>
+    </main>
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-alpha.3/js/materialize.min.js"></script>
+</body>
+</html>
