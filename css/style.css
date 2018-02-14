@@ -13,6 +13,9 @@ main {
 }
 
 .gif-img {
-	padding-top: 60px;
-	 text-align: center
+	position: relative;
+    top: 80px;
+    text-align: center;
+
+    
 }
