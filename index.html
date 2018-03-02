@@ -1,21 +1,60 @@
 <!DOCTYPE html>
-<html lang="en-US" >
+<html lang="en-US">
 <head>
     <meta charset="UTF-8">
     <title>Bubble Search Engine</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>
+        jQuery(window).load(function(){
+            jQuery(".hameid-loader-overlay").fadeOut(1000);
+        });
+    </script>
+    <link rel="stylesheet" href="css/design.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-alpha.3/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Josefin+Slab" rel="stylesheet">
 </head>
 <body>
+    <div class="hameid-loader-overlay">
+        <div class="container0">
+          <div class="circle0"></div>
+        </div>
+        <div class="container1">
+          <div class="circle1"></div>
+        </div>
+        <div class="container2">
+          <div class="circle2"></div>
+        </div>
+        <div class="container3">
+          <div class="circle3"></div>
+        </div>
+        <div class="container4">
+          <div class="circle4"></div>
+        </div>
+        <div class="container5">
+          <div class="circle5"></div>
+        </div>
+        <div class="container6">
+          <div class="circle6"></div>
+        </div>
+        <div class="container7">
+          <div class="circle7"></div>
+        </div>
+        <div class="container8">
+          <div class="circle8"></div>
+        </div>
+        <div class="container9">
+          <div class="circle9"></div>
+        </div>
+    </div>
     <main class="container">
         <div class="gif-img">
-            <img src="img/bubble.png">
+            <img src="img/bubble.png" alt="Bubble" height="122" width="411">
         </div>
         <div class="row" style="margin-top: 20%">
             <div class="card col s12 hoverable">
-                <form action="search.php" method="get">
+                <form action="search.php" method="post">
                 <div class="card-content">
                     <span class="card-title">Bubble Search Engine</span>
                     <div class="col s12 input-field">
@@ -35,5 +74,7 @@
     </main>
     <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-alpha.3/js/materialize.min.js"></script>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    
 </body>
 </html>

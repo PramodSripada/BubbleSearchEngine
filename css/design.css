@@ -1,0 +1,238 @@
+
+.container0 {
+  position: absolute;
+  left: calc(50% - 35px);
+  top: calc(50%);
+  height: 10px;
+  transform-origin: 70% 50%;
+  transform: rotate(0deg);
+  width: 70px;
+}
+
+.circle0 {
+  position: absolute;
+  transform: rotate(0deg);
+  background: #fff;
+  border-radius: 100%;
+  height: 20px;
+  width: 20px;
+  animation: test 2s 0ms infinite;
+}
+
+.container1 {
+  position: absolute;
+  left: calc(50% - 35px);
+  top: calc(50%);
+  height: 10px;
+  transform-origin: 70% 50%;
+  transform: rotate(36deg);
+  width: 70px;
+}
+
+.circle1 {
+  position: absolute;
+  transform: rotate(18deg);
+  background: #0ff;
+  border-radius: 100%;
+  height: 20px;
+  width: 20px;
+  animation: test 2s 200ms infinite;
+}
+
+.container2 {
+  position: absolute;
+  left: calc(50% - 35px);
+  top: calc(50%);
+  height: 10px;
+  transform-origin: 70% 50%;
+  transform: rotate(72deg);
+  width: 70px;
+}
+
+.circle2 {
+  position: absolute;
+  transform: rotate(36deg);
+  background: #fff;
+  border-radius: 100%;
+  height: 20px;
+  width: 20px;
+  animation: test 2s 400ms infinite;
+}
+
+.container3 {
+  position: absolute;
+  left: calc(50% - 35px);
+  top: calc(50%);
+  height: 10px;
+  transform-origin: 70% 50%;
+  transform: rotate(108deg);
+  width: 70px;
+}
+
+.circle3 {
+  position: absolute;
+  transform: rotate(54deg);
+  background: #0ff;
+  border-radius: 100%;
+  height: 20px;
+  width: 20px;
+  animation: test 2s 600ms infinite;
+}
+
+.container4 {
+  position: absolute;
+  left: calc(50% - 35px);
+  top: calc(50%);
+  height: 10px;
+  transform-origin: 70% 50%;
+  transform: rotate(144deg);
+  width: 70px;
+}
+
+.circle4 {
+  position: absolute;
+  transform: rotate(72deg);
+  background: #fff;
+  border-radius: 100%;
+  height: 20px;
+  width: 20px;
+  animation: test 2s 800ms infinite;
+}
+
+.container5 {
+  position: absolute;
+  left: calc(50% - 35px);
+  top: calc(50%);
+  height: 10px;
+  transform-origin: 70% 50%;
+  transform: rotate(180deg);
+  width: 70px;
+}
+
+.circle5 {
+  position: absolute;
+  transform: rotate(90deg);
+  background: #0ff;
+  border-radius: 100%;
+  height: 20px;
+  width: 20px;
+  animation: test 2s 1000ms infinite;
+}
+
+.container6 {
+  position: absolute;
+  left: calc(50% - 35px);
+  top: calc(50%);
+  height: 10px;
+  transform-origin: 70% 50%;
+  transform: rotate(216deg);
+  width: 70px;
+}
+
+.circle6 {
+  position: absolute;
+  transform: rotate(108deg);
+  background: #fff;
+  border-radius: 100%;
+  height: 20px;
+  width: 20px;
+  animation: test 2s 1200ms infinite;
+}
+
+.container7 {
+  position: absolute;
+  left: calc(50% - 35px);
+  top: calc(50%);
+  height: 10px;
+  transform-origin: 70% 50%;
+  transform: rotate(252deg);
+  width: 70px;
+}
+
+.circle7 {
+  position: absolute;
+  transform: rotate(126deg);
+  background: #0ff;
+  border-radius: 100%;
+  height: 20px;
+  width: 20px;
+  animation: test 2s 1400ms infinite;
+}
+
+.container8 {
+  position: absolute;
+  left: calc(50% - 35px);
+  top: calc(50%);
+  height: 10px;
+  transform-origin: 70% 50%;
+  transform: rotate(288deg);
+  width: 70px;
+}
+
+.circle8 {
+  position: absolute;
+  transform: rotate(144deg);
+  background: #fff;
+  border-radius: 100%;
+  height: 20px;
+  width: 20px;
+  animation: test 2s 1600ms infinite;
+}
+
+.container9 {
+  position: absolute;
+  left: calc(50% - 35px);
+  top: calc(50%);
+  height: 10px;
+  transform-origin: 70% 50%;
+  transform: rotate(324deg);
+  width: 70px;
+}
+
+.circle9 {
+  position: absolute;
+  transform: rotate(162deg);
+  background: #0ff;
+  border-radius: 100%;
+  height: 20px;
+  width: 20px;
+  animation: test 2s 1800ms infinite;
+}
+
+.container10 {
+  position: absolute;
+  left: calc(50% - 35px);
+  top: calc(50%);
+  height: 10px;
+  transform-origin: 70% 50%;
+  transform: rotate(360deg);
+  width: 70px;
+}
+
+.circle10 {
+  position: absolute;
+  transform: rotate(180deg);
+  background: #fff;
+  border-radius: 100%;
+  height: 20px;
+  width: 20px;
+  animation: test 2s 2000ms infinite;
+}
+
+@keyframes test {
+  0%,
+  100% {
+    left: 0px;
+    height: 20px;
+    width: 20px;
+    animation-timing-function: cubic-bezier(0.7, 0, 0, 0.7);
+  }
+  30%,
+  50% {
+    left: 30px;
+    height: 1px;
+    opacity: 0;
+    width: 1px;
+    animation-timing-function: cubic-bezier(0.7, 0, 0, 0.7);
+  }
+}
