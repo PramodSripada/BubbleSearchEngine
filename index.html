@@ -54,7 +54,8 @@
         </div>
         <div class="row" style="margin-top: 20%">
             <div class="card col s12 hoverable">
-                <form action="search.php" method="post">
+                <form action="search.php" method="get">
+                    <input type="hidden" name="page" value="0" />
                 <div class="card-content">
                     <span class="card-title">Bubble Search Engine</span>
                     <div class="col s12 input-field">
@@ -75,6 +76,5 @@
     <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-alpha.3/js/materialize.min.js"></script>
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
-    
 </body>
 </html>
