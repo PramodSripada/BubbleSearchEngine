@@ -19,7 +19,7 @@ $already_crawled = array();
 $crawling = array();
 
 function get_details($url) {
-
+    $visit = 0;
 	$options = array('http'=>array('method'=>"GET", 'headers'=>"User-Agent: Bot/0.1\n")); //creates custom headers
 
 	$context = stream_context_create($options);
@@ -43,7 +43,7 @@ function get_details($url) {
 
 	}
 
-	return '{ "Title": "'.str_replace("\n", "", $title).'", "Description": "'.str_replace("\n", "", $description).'", "Keywords": "'.str_replace("\n", "", $keywords).'", "URL": "'.$url.'"}';
+	return '{ "Title": "'.str_replace("\n", "", $title).'", "Description": "'.str_replace("\n", "", $description).'", "Keywords": "'.str_replace("\n", "", $keywords).'", "URL": "'.$url.'","visit": "'.$visit.'"}';
 
 }
 
@@ -87,7 +87,6 @@ function follow_links($url)  {
 		else if (substr($l, 0, 5) != "https" && substr($l, 0, 4) != "http") {
 			 $l = parse_url($url)["scheme"]."://".parse_url($url)["host"]."/".$l;
 		}
-
 		if(!in_array($l, $already_crawled)) {
 			$already_crawled[] = $l;
 			$crawling[] = $l;
@@ -101,22 +100,22 @@ function follow_links($url)  {
 			$rows = $pdo->query("SELECT * FROM `index` WHERE url_hash='".md5($details->URL)."'");
 			$rows = $rows->fetchColumn();
 
-			$params = array (':title' => $details->Title, ':description' => $details->Description, ':keywords' => $details->Keywords, ':url' => $details->URL, ':url_hash' => md5($details->URL));
+			$params = array (':title' => $details->Title, ':description' => $details->Description, ':keywords' => $details->Keywords, ':url' => $details->URL, ':url_hash' => md5($details->URL), ':visit' => $details->visit);
 
 			if ($rows > 0) {
 				if(!is_null($params[':title']) && !is_null($params[':description']) && $params[':title'] != '') {
 
-				$result = $pdo->prepare("UPDATE `index` SET title=:title, description=:description, keywords=:keywords, url=:url, url_hash=:url_hash WHERE url_hash=:url_hash");
+				$result = $pdo->prepare("UPDATE `index` SET title=:title, description=:description, keywords=:keywords, url=:url, url_hash=:url_hash, visit = :visit WHERE url_hash=:url_hash");
 				$result = $result->execute($params);
 
 				}
-			} else {
+			} else { 
+				
 				echo "\n";
 				if(!is_null($params[':title']) && !is_null($params[':description']) && $params[':title'] != '') {
 
-				$result = $pdo->prepare("INSERT INTO `index` VALUES ('', :title, :description, :keywords, :url, :url_hash)");
+				$result = $pdo->prepare("INSERT INTO `index` VALUES ('', :title, :description, :keywords, :url, :url_hash, :visit)");
 				$result = $result->execute($params);
-
 				}
 			}
 			//echo get_details($l)."\n";
@@ -136,3 +135,5 @@ function follow_links($url)  {
 follow_links($start);
 
 print_r($already_crawled);
+?>
+<a href="index.html">Back</a>

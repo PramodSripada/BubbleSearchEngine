@@ -6,10 +6,7 @@ $query=$search;
 $page_number = (int)$_GET['page'];
 if ($page_number<0)
 $page_number = 0;
-
-
 $results_per_page = 10;
-
 $next = $page_number + $results_per_page;
 $prev = $page_number - $results_per_page;
 $searche = explode(" ", $search);
@@ -17,14 +14,15 @@ $x = 0;
 $construct = "";
 $params = array();
 foreach ($searche as $term) {
-	$x++;
-	if ($x == 1) {
-		$construct .= "title LIKE CONCAT('%',:search$x,'%') OR description LIKE CONCAT('%',:search$x,'%') OR keywords LIKE CONCAT('%',:search$x,'%')";
-	} else {
-		$construct .= " AND title LIKE CONCAT('%',:search$x,'%') OR description LIKE CONCAT('%',:search$x,'%') OR keywords LIKE CONCAT('%',:search$x,'%')";
-	}
-	$params[":search$x"] = $term;
+  $x++;
+  if ($x == 1) {
+    $construct .= "title LIKE CONCAT('%',:search$x,'%') OR description LIKE CONCAT('%',:search$x,'%') OR keywords LIKE CONCAT('%',:search$x,'%')";
+  } else {
+    $construct .= " AND title LIKE CONCAT('%',:search$x,'%') OR description LIKE CONCAT('%',:search$x,'%') OR keywords LIKE CONCAT('%',:search$x,'%')";
+  }
+  $params[":search$x"] = $term;
 }
+$construct .= " ORDER BY `visit` DESC";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -35,48 +33,42 @@ foreach ($searche as $term) {
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="signin.js"></script>
   
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
 a:link{
-	color: green;
+  color: green;
 }
 a:visited{
-	color:blue;
+  color:blue;
 }
 a:hover{color:red;
 }
 a:active{
-	color:yellow;
+  color:yellow;
 }
 * {box-sizing: border-box;}
-
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
 }
-
 .topnav {
-	position: fixed;
-	overflow: hidden;
+  position: fixed;
+  overflow: hidden;
     z-index:999;
     background-color: #FAFAFA;
     height: 90px;
 }
-
-
 .topnav .search-container {
   float: right;
   margin-bottom: 20px;
 }
-
 .topnav input[type=text] {
   padding: 10px;
-
   font-size: 17px;
   border: none;
 }
-
 .topnav .search-container button {
   float: right;
   padding: 10px 10px;
@@ -85,11 +77,9 @@ body {
   border: none;
   cursor: pointer;
 }
-
 .topnav .search-container button:hover {
   background: #F44336 ;
 }
-
 @media screen and (max-width: 600px) {
   .topnav .search-container {
     float: none;
@@ -112,27 +102,23 @@ body {
   box-shadow: 0 0 3px #f2f2f2;
   width: 900px;
   }
-
   h4{
-  	color: #8c8c8c;
-  	line-height: 1.5em;
+    color: #8c8c8c;
+    line-height: 1.5em;
   }
-
 .pramod:hover{
-	  box-shadow: 0 8px 10px 0 rgba(255,255,255,0.2), 0 6px 10px 0 rgba(0,0,0,0.19);
+    box-shadow: 0 8px 10px 0 rgba(255,255,255,0.2), 0 6px 10px 0 rgba(0,0,0,0.19);
     -webkit-transition: -webkit-box-shadow .25s; 
     transition: -webkit-box-shadow .25s; 
     transition: box-shadow .25s; 
     transition: box-shadow .25s, -webkit-box-shadow .25s;
     background-color: #ffffff;
 } 
-
 ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
 }
-
 li {
     display: inline;
 }
@@ -142,8 +128,8 @@ li {
                 height: auto;
                 border: 1px solid w;
                 margin-left: 2px;
-				margin-top: 25px;
-				margin-bottom: 20px;
+        margin-top: 25px;
+        margin-bottom: 20px;
                 padding-left: 5px;
                 padding-right: 5px;
                 padding-bottom: 2px;
@@ -151,24 +137,22 @@ li {
                 list-style: none;
                 float: left;
                 text-align: center;
-				font-size:25px;
+        font-size:25px;
             }
 #search-page-number-1{
-	margin-left: 100px;
+  margin-left: 100px;
 }
-
 #search-page-number-2{
-	margin-left: 270px;
+  margin-left: 270px;
 }
-
-			#search-page-number1 {
+      #search-page-number1 {
                 display: block;
                 width: auto;
                 height: auto;
                 border: 1px solid w;
                 margin-left: 200px;
-				margin-top: 25px;
-				margin-bottom: 20px;
+        margin-top: 25px;
+        margin-bottom: 20px;
                 padding-left: 5px;
                 padding-right: 5px;
                 padding-bottom: 2px;
@@ -176,30 +160,30 @@ li {
                 list-style: none;
                 float: left;
                 text-align: center;
-				font-size:25px;
+        font-size:25px;
             }
-			#search-page-number1 a:link{
-				color: green;
-			}
-			#search-page-number1 a:visited{
-				color:#00c3ff;
-			}
-			#search-page-number1 a:hover{color:black;
-			}
-			#search-page-number1 a:active{
-				color:blue;
-			}
-			#search-page-number a:link{
-				color: green;
-			}
-			#search-page-number a:visited{
-				color:#00c3ff;
-			}
-			#search-page-number a:hover{color:black;
-			}
-			#search-page-number a:active{
-				color:blue;
-			}
+      #search-page-number1 a:link{
+        color: green;
+      }
+      #search-page-number1 a:visited{
+        color:#00c3ff;
+      }
+      #search-page-number1 a:hover{color:black;
+      }
+      #search-page-number1 a:active{
+        color:blue;
+      }
+      #search-page-number a:link{
+        color: green;
+      }
+      #search-page-number a:visited{
+        color:#00c3ff;
+      }
+      #search-page-number a:hover{color:black;
+      }
+      #search-page-number a:active{
+        color:blue;
+      }
 </style>
 </head>
 <body>
@@ -224,37 +208,37 @@ li {
 $results = $pdo->prepare("SELECT * FROM `index` WHERE $construct");
 $results->execute($params);
 if ($results->rowCount() == 0) {
-	echo "No Results found!<hr>";
-	 echo "<p>";
+  echo "No Results found!<hr>";
+   echo "<p>";
      echo "Your search - <b>$query</b>" . " - did not match any documents. Please try different keywords.";
 } else if($results->rowCount() > 1){
-	echo $results->rowCount()." results found! <hr>";
-	$index=1;
-	if($page_number!=0)
+  echo $results->rowCount()." results found! <hr>";
+  $index=1;
+  if($page_number!=0)
 while($result=$results->fetch()) {
-	if($index<=$page_number)
-	$index++;
-	else{
-		break;
-	}
+  if($index<=$page_number)
+  $index++;
+  else{
+    break;
+  }
 }
 $index=1;
 while($result=$results->fetch()) {
-	if($index<=10)
-	$index++;
-	else{
-		break;
-	}
+  if($index<=10)
+  $index++;
+  else{
+    break;
+  }
 ?>
 <div class="row" style="background-color:#fafafa;margin-top:30px; width: 900px; margin-left: 105px;">
 <div class="col-sm-12 pramod" style="height: contain; padding: 10px; padding-left: 20px;">
-<?php echo "<h3><a href='".$result["url"]."'>".$result["title"]."</a></h3>"; 
+<?php ?><h3><a href=<?php echo $result["url"]; ?> onclick="signin(<?php $y=$result["id"]; echo $y; ?>);"><?php echo $result["title"];?></a></h3><?php
  if ($result["description"] == "") { 
  echo "<h4>No Description Available</h4>"; 
  }
  else {
-	echo "<h4>".$result["description"]."</h4>";
-		}
+  echo "<h4>".$result["description"]."</h4>";
+    }
 echo  "<h5>".$result["url"]."</h5>";
  ?>
 </div>
@@ -263,20 +247,20 @@ echo  "<h5>".$result["url"]."</h5>";
 }
 }
 else{
-	echo $results->rowCount()." result found! <hr>";
+  echo $results->rowCount()." result found! <hr>";
 $index=1;
 while($result=$results->fetch()) {
-	$index++;
+  $index++;
 ?>
 <div class="row" style="background-color:#ffffff;margin-top:30px; margin-left: 105px;">
 <div class="col-sm-12 pramod">
-<?php echo "<h4><a href='".$result["url"]."'>".$result["title"]."</a></h4>"; 
+<?php ?><h3><a href=<?php echo $result["url"];?> onclick="signin(<?php echo $y=$result["id"]; echo $y; ?>);" ><?php echo $result["title"];?></a></h3><?php
  if ($result["description"] == "") { 
  echo "<h4>No Description Available</h4>"; 
  }
  else {
-	echo "<h4>".$result["description"]."</h4>";
-		}
+  echo "<h4>".$result["description"]."</h4>";
+    }
 echo  "<h5>".$result["url"]."</h5>";
 }
  ?>
@@ -288,59 +272,39 @@ echo  "<h5>".$result["url"]."</h5>";
 <div id="page-number" align="center">
                     
                             <?php
-							
-							$number_of_result=$results->rowCount();
+              
+              $number_of_result=$results->rowCount();
                             //ie if 35 results are there then we require 4 pages that are 0 to max_page_number
                             //current page number is equal to page_number
-
     $max_page_number = ceil($number_of_result / $results_per_page);
                             //echo $max_page_number;
                             echo "<ul>";
                             //both the condition are not the neccesary
-if ($max_page_number > 2) { // if more than 2 pages 
-
+if ($max_page_number >= 2) { // if more than 2 pages 
   if ($page_number > 0 ) { //Previous
-    echo "<li id='search-page-number-1'>";
-    echo "<a href=search.php?q=$search&page=".($page_number -  $results_per_page).">Previous</a>";
-    echo "</li>";
+    ?>
+   <button type="submit" class="btn btn-link" name="page" value='<?php echo ($page_number -  $results_per_page);?>'>Previous</button>
+   <?php
   }
 $k=$page_number/$results_per_page;
 if($k-5<0)
-	$k=0;
+  $k=0;
 else if($k+5>$max_page_number) 
-	$k=$max_page_number-10;
+  $k=$max_page_number-10;
 else
-	$k=$k-5;
-
+  $k=$k-5;
   for($index = $k; $index < $max_page_number && $index<$k+10; $index++)
     {
-		if($index==$k)
-		{
-			echo "<div style=\'align:center;\'>";
-			echo "<li id='search-page-number1'>";
-			echo "<a href=search.php?q=$query&page=".($index * $results_per_page).">";
-			echo ($index + 1) . "</a>";
-			echo "</li>";
-			echo "</div>";
-		}
-		else{
-      echo "<li id='search-page-number'>";
-      echo "<a href=search.php?q=$query&page=".($index * $results_per_page).">";
-      echo ($index + 1) . "</a>";
-      echo "</li>";
-		}
+    
+     ?>
+   <button type="submit" id ="l" class="btn btn-link" name="page" value='<?php echo ($index * $results_per_page);?>'><?php echo ($index + 1);?></button>
+   <?php
     }
-
   if (($page_number + $results_per_page) < $number_of_result ) { //Next
-    echo "<li id='search-page-number-2'>";
-    echo "<a href=search.php?q=$query&page=".($page_number +  $results_per_page).">Next</a>";
-    echo "</li>";
+    ?>
+   <button type="submit" class="btn btn-link" name="page" value='<?php echo ($page_number +  $results_per_page);?>'>Next</button>
+   <?php
   }
-} elseif (($max_page_number == 2 ) ) {
-
-  echo "<li id='search-page-number'>";
-  echo "<a href=search.php?q=$query&page=".($page_number == 0 ? 10 : 0).">".($page_number == 0 ? "Next":"Previous" )."</a>";
-  echo "</li>";
 } 
 echo "</ul>";
 ?>
