@@ -14,7 +14,7 @@ foreach ($data as $url) {
 	}
 }
 file_put_contents ("test.html" , $urls);
-echo "done";
+echo "Crawling done!";
 redirect();
 
 function redirect(){

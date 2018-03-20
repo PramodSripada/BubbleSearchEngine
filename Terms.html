@@ -7,7 +7,7 @@
 <style>
 	p{
 		font-size: 20px;
-		text-align: center;
+
 	}
 	h1{
 		text-align: center;
@@ -20,20 +20,227 @@
 	}
 </style>
 <body>
-<h1>Website Standard Terms and Conditions</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bubble</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="signin.js"></script>
+  <title>About US | BSE</title>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+a:link{
+	color: green;
+}
+a:visited{
+	color:blue;
+}
+a:hover{color:red;
+}
+a:active{
+	color:yellow;
+}
+* {box-sizing: border-box;}
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.topnav {
+	position: fixed;
+	overflow: hidden;
+    z-index:999;
+    background-color: #FAFAFA;
+    height: 90px;
+}
+.topnav .search-container {
+  float: right;
+  margin-bottom: 20px;
+}
+.topnav input[type=text] {
+  padding: 10px;
+  font-size: 17px;
+  border: none;
+}
+.topnav .search-container button {
+  float: right;
+  padding: 10px 10px;
+  background: #33cc99;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+.topnav .search-container button:hover {
+  background: #F44336 ;
+}
+@media screen and (max-width: 600px) {
+  .topnav .search-container {
+    float: none;
+  }
+  .topnav a, .topnav input[type=text], .topnav .search-container button {
+    float: none;
+    display: block;
+    text-align: left;
+    width: 100%;
+    margin: 0;
+    padding: 14px;
+  }
+  .topnav input[type=text] {
+    border: 1px solid #ccc;  
+  }
+}
+.pramod {
+  background-color: #ffffff;
+  border: 1px solid #f2f2f2;
+  box-shadow: 0 0 3px #f2f2f2;
+  width: 900px;
+  }
+  h4{
+  	color: #8c8c8c;
+  	line-height: 1.5em;
+  }
+.pramod:hover{
+	  box-shadow: 0 8px 10px 0 rgba(255,255,255,0.2), 0 6px 10px 0 rgba(0,0,0,0.19);
+    -webkit-transition: -webkit-box-shadow .25s; 
+    transition: -webkit-box-shadow .25s; 
+    transition: box-shadow .25s; 
+    transition: box-shadow .25s, -webkit-box-shadow .25s;
+    background-color: #ffffff;
+} 
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+li {
+    display: inline;
+}
+#search-page-number, #search-page-number-1, #search-page-number-2{
+                display: block;
+                width: auto;
+                height: auto;
+                border: 1px solid w;
+                margin-left: 2px;
+				margin-top: 25px;
+				margin-bottom: 20px;
+                padding-left: 5px;
+                padding-right: 5px;
+                padding-bottom: 2px;
+                padding-top: 2px;
+                list-style: none;
+                float: left;
+                text-align: center;
+				font-size:25px;
+            }
+#search-page-number-1{
+	margin-left: 100px;
+}
+#search-page-number-2{
+	margin-left: 270px;
+}
+			#search-page-number1 {
+                display: block;
+                width: auto;
+                height: auto;
+                border: 1px solid w;
+                margin-left: 200px;
+				margin-top: 25px;
+				margin-bottom: 20px;
+                padding-left: 5px;
+                padding-right: 5px;
+                padding-bottom: 2px;
+                padding-top: 2px;
+                list-style: none;
+                float: left;
+                text-align: center;
+				font-size:25px;
+            }
+			#search-page-number1 a:link{
+				color: green;
+			}
+			#search-page-number1 a:visited{
+				color:#00c3ff;
+			}
+			#search-page-number1 a:hover{color:black;
+			}
+			#search-page-number1 a:active{
+				color:blue;
+			}
+			#search-page-number a:link{
+				color: green;
+			}
+			#search-page-number a:visited{
+				color:#00c3ff;
+			}
+			#search-page-number a:hover{color:black;
+			}
+			#search-page-number a:active{
+				color:blue;
+			}
+			h1{
+		text-align: center;
+		font-family: 'Open Sans', sans-serif;
+	}
+	p{
+		font-size: 20px;
+	
+	}
+	h1{
+		text-align: center;
+		font-family: 'Roboto', sans-serif;
+		font-family: 'Open Sans', sans-serif;
+	}
+	h3{
+		font-family: sans-serif;
+		font-size: 20px;
+	}
+	hr{
+		display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 1px;
+    width: 800px;		
+	}
+</style>
+</head>
+<body>
+<form action="search.php" method="GET">
+<input type="hidden" name="page" value="0" />
+<div class="topnav">
+<div class="col-sm-2">
+ <a href="index.html"><img src="img/bubble.png" height="40px" width="65%" style="margin-top:20px; margin-left: 50px;"></a>
+ </div>
+ <div class="col-sm-10" style="margin-top:20px;">
+  <div class="search-container pramod" style="float:left;">
+
+      <input type="text" placeholder="Search.." name="q" value="Terms and Policy" style="width:96%;">
+      <button type="submit" name="submit"><i class="fa fa-search"></i></button>
+  </div>
+  </div>
+  </div>
+  <div style="padding-top:9%; margin-left: 5%;">
+  <h1>Website Standard Terms and Conditions</h1>
+  <hr>
 <ul>
-	<li><h3><b>Introduction.</b></h3></li>
-	<p>These Website Standard Terms And Conditions (these "Terms" or these "Website Standard Terms And Conditions") contained herein on this webpage, shall govern your use of this website, including all pages within this website (collectively referred to herein below as this "Website"). These Terms apply in full force and effect to your use of this Website and by using this Website, you expressly accept all terms and conditions contained herein in full. You must not use this Website, if you have any objection to any of these Website Standard Terms And Conditions.
+	<li><h3><b>Introduction:</b></h3></li>
+	<p style="margin-left: 5%; margin-right: 5%;">These Website Standard Terms And Conditions (these "Terms" or these "Website Standard Terms And Conditions") contained herein on this webpage, shall govern your use of this website, including all pages within this website (collectively referred to herein below as this "Website"). These Terms apply in full force and effect to your use of this Website and by using this Website, you expressly accept all terms and conditions contained herein in full. You must not use this Website, if you have any objection to any of these Website Standard Terms And Conditions.
 
 This Website is not for use by any minors (defined as those who are not at least 18 years of age), and you must not use this Website if you a minor.</p>
-	<li><h3><b>Intellectual Property Rights.</b></h3></li>
-	<p>Other than content you own, which you may have opted to include on this Website, under these Terms, Bubble Search Engine and/or its licensors own all rights to the intellectual property and material contained in this Website, and all such rights are reserved.
+	<li><h3><b>Intellectual Property Rights:</b></h3></li>
+	<p style="margin-left: 5%; margin-right: 5%;">Other than content you own, which you may have opted to include on this Website, under these Terms, Bubble Search Engine and/or its licensors own all rights to the intellectual property and material contained in this Website, and all such rights are reserved.
 
 You are granted a limited license only, subject to the restrictions provided in these Terms, for purposes of viewing the material contained on this Website.
 
 </p>
-	<li><h3><b>Restrictions.</b></h3></li>
-	<p>
+	<li><h3><b>Restrictions:</b></h3></li>
+	<p style="margin-left: 5%; margin-right: 5%;">
 		You are expressly and emphatically restricted from all of the following:
 
 publishing any Website material in any media;
@@ -54,49 +261,52 @@ using this Website to engage in any advertising or marketing;
 
 Certain areas of this Website are restricted from access by you and Bubble Search Engine may further restrict access by you to any areas of this Website, at any time, in its sole and absolute discretion.  Any user ID and password you may have for this Website are confidential and you must maintain confidentiality of such information.
 	</p>
-	<li><h3><b>Your Content.</b></h3></li>
-	<p>
+	<li><h3><b>Your Content:</b></h3></li>
+	<p style="margin-left: 5%; margin-right: 5%;">
 		In these Website Standard Terms And Conditions, "Your Content" shall mean any audio, video, text, images or other material you choose to display on this Website. With respect to Your Content, by displaying it, you grant Bubble Search Engine a non-exclusive, worldwide, irrevocable, royalty-free, sublicensable license to use, reproduce, adapt, publish, translate and distribute it in any and all media.
 
 Your Content must be your own and must not be infringing on any third party's rights. Bubble Search Engine reserves the right to remove any of Your Content from this Website at any time, and for any reason, without notice.
 	</p>
-	<li><h3><b>No warranties.</b></h3></li>
-	<p>
+	<li><h3><b>No warranties:</b></h3></li>
+	<p style="margin-left: 5%; margin-right: 5%;">
 		This Website is provided "as is,"" with all faults, and Bubble Search Engine makes no express or implied representations or warranties, of any kind related to this Website or the materials contained on this Website. Additionally, nothing contained on this Website shall be construed as providing consult or advice to you.
 	</p>
-	<li><h3><b>Limitation of liability.</b></h3></li>
-	<p>
+	<li><h3><b>Limitation of liability:</b></h3></li>
+	<p style="margin-left: 5%; margin-right: 5%;">
 		In no event shall Bubble Search Engine, nor any of its officers, directors and employees, be liable to you for anything arising out of or in any way connected with your use of this Website, whether such liability is under contract, tort or otherwise, and Bubble Search Engine, including its officers, directors and employees shall not be liable for any indirect, consequential or special liability arising out of or in any way related to your use of this Website.
 	</p>
-	<li><h3><b>Indemnification.</b></h3></li>
-	<p>
+	<li><h3><b>Indemnification:</b></h3></li>
+	<p style="margin-left: 5%; margin-right: 5%;">
 		You hereby indemnify to the fullest extent Bubble Search Engine from and against any and all liabilities, costs, demands, causes of action, damages and expenses (including reasonable attorney's fees) arising out of or in any way related to your breach of any of the provisions of these Terms.
 	</p>
-	<li><h3><b>Severability.</b></h3></li>
-	<p>
+	<li><h3><b>Severability:</b></h3></li>
+	<p style="margin-left: 5%; margin-right: 5%;">
 		If any provision of these Terms is found to be unenforceable or invalid under any applicable law, such unenforceability or invalidity shall not render these Terms unenforceable or invalid as a whole, and such provisions shall be deleted without affecting the remaining provisions herein.
 
 
 	</p>
-	<li><h3><b>Variation of Terms.</b></h3></li>
-	<p>
+	<li><h3><b>Variation of Terms:</b></h3></li>
+	<p style="margin-left: 5%; margin-right: 5%;">
 		Bubble Search Engine is permitted to revise these Terms at any time as it sees fit, and by using this Website you are expected to review such Terms on a regular basis to ensure you understand all terms and conditions governing use of this Website.
 	</p>
-	<li><h3><b>Assignment.</b></h3></li>
-	<p>
+	<li><h3><b>Assignment:</b></h3></li>
+	<p style="margin-left: 5%; margin-right: 5%;">
 		Bubble Search Engine shall be permitted to assign, transfer, and subcontract its rights and/or obligations under these Terms without any notification or consent required. However, .you shall not be permitted to assign, transfer, or subcontract any of your rights and/or obligations under these Terms.
 	</p>
-	<li><h3><b>Entire Agreement.</b></h3></li>
-	<p>
+	<li><h3><b>Entire Agreement:</b></h3></li>
+	<p style="margin-left: 5%; margin-right: 5%;">
 		These Terms, including any legal notices and disclaimers contained on this Website, constitute the entire agreement between Bubble Search Engine and you in relation to your use of this Website, and supersede all prior agreements and understandings with respect to the same.
 
 
 	</p>
-	<li><h3><b>Governing Law & Jurisdiction.</b></h3></li>
-	<p>
+	<li><h3><b>Governing Law & Jurisdiction:</b></h3></li>
+	<p style="margin-left: 5%; margin-right: 5%;">
 		These Terms will be governed by and construed in accordance with the laws of the State of Andhra Pradesh, and you submit to the non-exclusive jurisdiction of the state and federal courts located in Andhra Pradesh for the resolution of any disputes.
 	</p>
 
 </ul>
+  </div>
+</body>
+</html>
 </body>
 </html>

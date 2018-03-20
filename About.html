@@ -1,12 +1,165 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title>About US | BSE</title>
+  <title>Bubble</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="signin.js"></script>
+  <title>About US | BSE</title>
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-	
-</head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
-	h1{
+a:link{
+	color: green;
+}
+a:visited{
+	color:blue;
+}
+a:hover{color:red;
+}
+a:active{
+	color:yellow;
+}
+* {box-sizing: border-box;}
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.topnav {
+	position: fixed;
+	overflow: hidden;
+    z-index:999;
+    background-color: #FAFAFA;
+    height: 90px;
+}
+.topnav .search-container {
+  float: right;
+  margin-bottom: 20px;
+}
+.topnav input[type=text] {
+  padding: 10px;
+  font-size: 17px;
+  border: none;
+}
+.topnav .search-container button {
+  float: right;
+  padding: 10px 10px;
+  background: #33cc99;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+.topnav .search-container button:hover {
+  background: #F44336 ;
+}
+@media screen and (max-width: 600px) {
+  .topnav .search-container {
+    float: none;
+  }
+  .topnav a, .topnav input[type=text], .topnav .search-container button {
+    float: none;
+    display: block;
+    text-align: left;
+    width: 100%;
+    margin: 0;
+    padding: 14px;
+  }
+  .topnav input[type=text] {
+    border: 1px solid #ccc;  
+  }
+}
+.pramod {
+  background-color: #ffffff;
+  border: 1px solid #f2f2f2;
+  box-shadow: 0 0 3px #f2f2f2;
+  width: 900px;
+  }
+  h4{
+  	color: #8c8c8c;
+  	line-height: 1.5em;
+  }
+.pramod:hover{
+	  box-shadow: 0 8px 10px 0 rgba(255,255,255,0.2), 0 6px 10px 0 rgba(0,0,0,0.19);
+    -webkit-transition: -webkit-box-shadow .25s; 
+    transition: -webkit-box-shadow .25s; 
+    transition: box-shadow .25s; 
+    transition: box-shadow .25s, -webkit-box-shadow .25s;
+    background-color: #ffffff;
+} 
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+li {
+    display: inline;
+}
+#search-page-number, #search-page-number-1, #search-page-number-2{
+                display: block;
+                width: auto;
+                height: auto;
+                border: 1px solid w;
+                margin-left: 2px;
+				margin-top: 25px;
+				margin-bottom: 20px;
+                padding-left: 5px;
+                padding-right: 5px;
+                padding-bottom: 2px;
+                padding-top: 2px;
+                list-style: none;
+                float: left;
+                text-align: center;
+				font-size:25px;
+            }
+#search-page-number-1{
+	margin-left: 100px;
+}
+#search-page-number-2{
+	margin-left: 270px;
+}
+			#search-page-number1 {
+                display: block;
+                width: auto;
+                height: auto;
+                border: 1px solid w;
+                margin-left: 200px;
+				margin-top: 25px;
+				margin-bottom: 20px;
+                padding-left: 5px;
+                padding-right: 5px;
+                padding-bottom: 2px;
+                padding-top: 2px;
+                list-style: none;
+                float: left;
+                text-align: center;
+				font-size:25px;
+            }
+			#search-page-number1 a:link{
+				color: green;
+			}
+			#search-page-number1 a:visited{
+				color:#00c3ff;
+			}
+			#search-page-number1 a:hover{color:black;
+			}
+			#search-page-number1 a:active{
+				color:blue;
+			}
+			#search-page-number a:link{
+				color: green;
+			}
+			#search-page-number a:visited{
+				color:#00c3ff;
+			}
+			#search-page-number a:hover{color:black;
+			}
+			#search-page-number a:active{
+				color:blue;
+			}
+			h1{
 		text-align: center;
 		font-family: 'Open Sans', sans-serif;
 	}
@@ -30,20 +183,30 @@ p{
 		
 }
 </style>
+</head>
 <body>
-<h1><b>"Bubble Search Engine"</b></h1>
+<form action="search.php" method="GET">
+<input type="hidden" name="page" value="0" />
+<div class="topnav">
+<div class="col-sm-2">
+ <a href="index.html"><img src="img/bubble.png" height="40px" width="65%" style="margin-top:20px; margin-left: 50px;"></a>
+ </div>
+ <div class="col-sm-10" style="margin-top:20px;">
+  <div class="search-container pramod" style="float:left;">
+
+      <input type="text" placeholder="Search.." name="q" value="About Bubble" style="width:96%;">
+      <button type="submit" name="submit"><i class="fa fa-search"></i></button>
+  </div>
+  </div>
+  </div>
+  <div style="padding-top:9%; margin-left: 8%; margin-right: 5%;">
+  <h1><b>"Bubble Search Engine"</b></h1>
 <hr>
 <h4>This project is an attempt to implement a search engine with Web Crawler</h4>
-<p>
+<p style="padding-top: 3%;">
 	A search engine is an information retrieval system designed to help find information stored on a computer system. The most public, visible form of a search engine is a Web search engine which searches for the information on the World Wide Web. Search engines provide an interface to a group of items that enables the users to specify the criteria about an item of interest and have the engine find the matching items. A webcrawler(Web spider or Web robot)is a program or automated script which browses the World Wide Web in a methodical, automated manner. This process is called Web crawling or spidering. Search engines uses pidering as a means of providing up-to-date data. Web crawler starts with a list of URLs to visit, called the seeds. WebCrawler's search engine performs two basic functions.First, it compiles an ongoing index of web addresses(URLs).Webcrawler retrieves and marks a document, analyzes the content of both its title and its full text, registered with the relevant links it contains, and then stores the information in its database. When the user submitted a query in the form of one or more keywords, WebCrawler compared it with the information in its index and reported back any matches.Webcrawler's second function was searching the Internet in real time for the sites that matched a givenquery.It was carried out using exactly the same process, following links from one page to another.
 
 </p>
-<h2>Technologies Used</h2>
-<p>
-	<ol>
-		<li>Front End : HTML 5, CSS 3, JavaScript.</li>
-		<li>Back End : PHP & MySql Server</li>
-	</ol>
-</p>
+  </div>
 </body>
 </html>

@@ -184,6 +184,11 @@ li {
       #search-page-number a:active{
         color:blue;
       }
+      #l{
+        margin-bottom: 4%;
+        margin-top: 4%;
+        font-size: 18px;
+      }
 </style>
 </head>
 <body>
@@ -195,8 +200,7 @@ li {
  </div>
  <div class="col-sm-10" style="margin-top:20px;">
   <div class="search-container pramod" style="float:left;">
-
-      <input type="text" placeholder="Search.." name="q" value="<?php echo $search; ?>" style="width:800px;">
+      <input type="text" placeholder="Search.." name="q" value="<?php echo $search; ?>" style="width:96%;">
       <button type="submit" name="submit"><i class="fa fa-search"></i></button>
 
   </div>
@@ -269,7 +273,7 @@ echo  "<h5>".$result["url"]."</h5>";
 <?php
 }
 ?>
-<div id="page-number" align="center">
+<div id="page-number" style="margin-left: 25%;">
                     
                             <?php
               
@@ -283,7 +287,7 @@ echo  "<h5>".$result["url"]."</h5>";
 if ($max_page_number >= 2) { // if more than 2 pages 
   if ($page_number > 0 ) { //Previous
     ?>
-   <button type="submit" class="btn btn-link" name="page" value='<?php echo ($page_number -  $results_per_page);?>'>Previous</button>
+   <button type="submit" id="l" class="btn btn-link" name="page" value='<?php echo ($page_number -  $results_per_page);?>'>Previous</button>
    <?php
   }
 $k=$page_number/$results_per_page;
@@ -302,7 +306,7 @@ else
     }
   if (($page_number + $results_per_page) < $number_of_result ) { //Next
     ?>
-   <button type="submit" class="btn btn-link" name="page" value='<?php echo ($page_number +  $results_per_page);?>'>Next</button>
+   <button type="submit" id="l" class="btn btn-link" name="page" value='<?php echo ($page_number +  $results_per_page);?>'>Next</button>
    <?php
   }
 } 
