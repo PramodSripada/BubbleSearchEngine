@@ -9,20 +9,21 @@ $page_number = 0;
 $results_per_page = 10;
 $next = $page_number + $results_per_page;
 $prev = $page_number - $results_per_page;
-$searche = explode(" ", $search);
+$searche = array_unique(explode(" ", $search));
 $x = 0;
 $construct = "";
 $params = array();
 foreach ($searche as $term) {
   $x++;
   if ($x == 1) {
-    $construct .= "title LIKE CONCAT('%',:search$x,'%') OR description LIKE CONCAT('%',:search$x,'%') OR keywords LIKE CONCAT('%',:search$x,'%')";
+    $construct .= "title LIKE CONCAT('%',:search$x,'%') OR description LIKE CONCAT('%',:search$x,'%') OR keywords LIKE CONCAT('%',:search$x,'%')  OR url LIKE CONCAT('%',:search$x,'%')";
   } else {
-    $construct .= " AND title LIKE CONCAT('%',:search$x,'%') OR description LIKE CONCAT('%',:search$x,'%') OR keywords LIKE CONCAT('%',:search$x,'%')";
+    $construct .= " AND title LIKE CONCAT('%',:search$x,'%') OR description LIKE CONCAT('%',:search$x,'%') OR keywords LIKE CONCAT('%',:search$x,'%')  OR url LIKE CONCAT('%',:search$x,'%')";
   }
   $params[":search$x"] = $term;
 }
 $construct .= " ORDER BY `visit` DESC";
+//echo "$construct";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -185,9 +186,9 @@ li {
         color:blue;
       }
       #l{
-        margin-bottom: 4%;
-        margin-top: 4%;
-        font-size: 18px;
+        margin-bottom:4%;
+        margin-top:4%;
+        font-size:15px;
       }
 </style>
 </head>
@@ -200,6 +201,7 @@ li {
  </div>
  <div class="col-sm-10" style="margin-top:20px;">
   <div class="search-container pramod" style="float:left;">
+
       <input type="text" placeholder="Search.." name="q" value="<?php echo $search; ?>" style="width:96%;">
       <button type="submit" name="submit"><i class="fa fa-search"></i></button>
 
@@ -220,7 +222,7 @@ if ($results->rowCount() == 0) {
   $index=1;
   if($page_number!=0)
 while($result=$results->fetch()) {
-  if($index<=$page_number)
+  if($index<$page_number)
   $index++;
   else{
     break;
@@ -256,7 +258,7 @@ $index=1;
 while($result=$results->fetch()) {
   $index++;
 ?>
-<div class="row" style="background-color:#ffffff;margin-top:30px; margin-left: 105px;">
+<div class="row" style="background-color:#ffffff;margin-top:30px; margin-left:105px;">
 <div class="col-sm-12 pramod">
 <?php ?><h3><a href=<?php echo $result["url"];?> onclick="signin(<?php echo $y=$result["id"]; echo $y; ?>);" ><?php echo $result["title"];?></a></h3><?php
  if ($result["description"] == "") { 
@@ -273,7 +275,7 @@ echo  "<h5>".$result["url"]."</h5>";
 <?php
 }
 ?>
-<div id="page-number" style="margin-left: 25%;">
+<div id="page-number" style="margin-left:25%;">
                     
                             <?php
               
@@ -287,7 +289,7 @@ echo  "<h5>".$result["url"]."</h5>";
 if ($max_page_number >= 2) { // if more than 2 pages 
   if ($page_number > 0 ) { //Previous
     ?>
-   <button type="submit" id="l" class="btn btn-link" name="page" value='<?php echo ($page_number -  $results_per_page);?>'>Previous</button>
+   <button type="submit"  id ="l" class="btn btn-link" name="page" value='<?php echo ($page_number -  $results_per_page);?>'>Previous</button>
    <?php
   }
 $k=$page_number/$results_per_page;
@@ -306,7 +308,7 @@ else
     }
   if (($page_number + $results_per_page) < $number_of_result ) { //Next
     ?>
-   <button type="submit" id="l" class="btn btn-link" name="page" value='<?php echo ($page_number +  $results_per_page);?>'>Next</button>
+   <button type="submit"  id ="l" class="btn btn-link" name="page" value='<?php echo ($page_number +  $results_per_page);?>'>Next</button>
    <?php
   }
 } 
