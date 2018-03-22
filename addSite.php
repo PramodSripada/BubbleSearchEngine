@@ -71,7 +71,7 @@ session_start();
         }
         .boxed{
            
-           background-color: #f2f2f2;
+           background-color: #ffffff;
            width: 80%;
            border: 2px solid #b3b3b3;
            padding: 25px;
@@ -85,7 +85,7 @@ session_start();
 </head>
 <body>
     <div style="margin-left:35%;">
- <a href="index.html"><img src="img/bubble.png" height= "122px" width= "411px" style="margin-top:10%"></a>
+ <a href="index.html"><img src="img/bubble.png" height= "122px" width= "411px" style="margin-top:3%"></a>
  </div>
     
 <div class="container" style="margin-left:17%;">
